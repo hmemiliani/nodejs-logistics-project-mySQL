@@ -1,6 +1,6 @@
 const warehouseModel = require('../models/warehousesModel');
 
-// Obtener todas las bodegas
+// Obtener todo
 exports.getAllWarehouses = async (req, res) => {
     try {
         const [rows] = await warehouseModel.getAllWarehouses();
@@ -10,7 +10,7 @@ exports.getAllWarehouses = async (req, res) => {
     }
 };
 
-// Obtener una bodega por ID
+// Obtener por ID
 exports.getWarehouseById = async (req, res) => {
     try {
         const [rows] = await warehouseModel.getWarehouseById(req.params.id);
@@ -24,7 +24,7 @@ exports.getWarehouseById = async (req, res) => {
     }
 };
 
-// Crear una nueva bodega
+// Crear
 exports.createWarehouse = async (req, res) => {
     try {
         const { name, location } = req.body;
@@ -40,7 +40,7 @@ exports.createWarehouse = async (req, res) => {
     }
 };
 
-// Actualizar una bodega por ID
+// Actualizar
 exports.updateWarehouseById = async (req, res) => {
     try {
         const { name, location } = req.body;
@@ -57,7 +57,7 @@ exports.updateWarehouseById = async (req, res) => {
     }
 };
 
-// Eliminar una bodega por ID
+// Eliminar por ID
 exports.deleteWarehouseById = async (req, res) => {
     try {
         const [result] = await warehouseModel.deleteWarehouseById(req.params.id);

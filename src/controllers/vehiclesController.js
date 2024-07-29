@@ -1,6 +1,6 @@
 const vehicleModel = require('../models/vehiclesModel');
 
-// Obtener todos los vehículos
+
 exports.getAllVehicles = async (req, res) => {
     try {
         const [rows] = await vehicleModel.getAllVehicles();
@@ -10,7 +10,6 @@ exports.getAllVehicles = async (req, res) => {
     }
 };
 
-// Obtener un vehículo por ID
 exports.getVehicleById = async (req, res) => {
     try {
         const [rows] = await vehicleModel.getVehicleById(req.params.id);
@@ -24,7 +23,6 @@ exports.getVehicleById = async (req, res) => {
     }
 };
 
-// Crear un nuevo vehículo
 exports.createVehicle = async (req, res) => {
     try {
         const { model, year, driver_id } = req.body;
@@ -40,7 +38,6 @@ exports.createVehicle = async (req, res) => {
     }
 };
 
-// Actualizar un vehículo por ID
 exports.updateVehicleById = async (req, res) => {
     try {
         const { model, year, driver_id } = req.body;
@@ -57,7 +54,6 @@ exports.updateVehicleById = async (req, res) => {
     }
 };
 
-// Eliminar un vehículo por ID
 exports.deleteVehicleById = async (req, res) => {
     try {
         const [result] = await vehicleModel.deleteVehicleById(req.params.id);

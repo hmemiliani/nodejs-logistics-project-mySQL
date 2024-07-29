@@ -1,6 +1,6 @@
 const shipmentModel = require('../models/shipmentsModel');
 
-// Obtener todos los envíos
+
 exports.getAllShipments = async (req, res) => {
     try {
         const [rows] = await shipmentModel.getAllShipments();
@@ -10,7 +10,6 @@ exports.getAllShipments = async (req, res) => {
     }
 };
 
-// Obtener un envío por ID
 exports.getShipmentById = async (req, res) => {
     try {
         const [rows] = await shipmentModel.getShipmentById(req.params.id);
@@ -24,7 +23,6 @@ exports.getShipmentById = async (req, res) => {
     }
 };
 
-// Crear un nuevo envío
 exports.createShipment = async (req, res) => {
     try {
         const { item, quantity, warehouse_id } = req.body;
@@ -40,7 +38,6 @@ exports.createShipment = async (req, res) => {
     }
 };
 
-// Actualizar un envío por ID
 exports.updateShipmentById = async (req, res) => {
     try {
         const { item, quantity, warehouse_id } = req.body;
@@ -57,7 +54,7 @@ exports.updateShipmentById = async (req, res) => {
     }
 };
 
-// Eliminar un envío por ID
+
 exports.deleteShipmentById = async (req, res) => {
     try {
         const [result] = await shipmentModel.deleteShipmentById(req.params.id);

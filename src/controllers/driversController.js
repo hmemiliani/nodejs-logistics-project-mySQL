@@ -1,6 +1,6 @@
 const driverModel = require('../models/driversModel');
 
-// Obtener todos los conductores
+
 exports.getAllDrivers = async (req, res) => {
     try {
         const [rows] = await driverModel.getAllDrivers();
@@ -10,7 +10,6 @@ exports.getAllDrivers = async (req, res) => {
     }
 };
 
-// Obtener un conductor por ID
 exports.getDriverById = async (req, res) => {
     try {
         const [rows] = await driverModel.getDriverById(req.params.id);
@@ -24,7 +23,6 @@ exports.getDriverById = async (req, res) => {
     }
 };
 
-// Crear un nuevo conductor
 exports.createDriver = async (req, res) => {
     try {
         const { name } = req.body;
@@ -40,7 +38,6 @@ exports.createDriver = async (req, res) => {
     }
 };
 
-// Actualizar un conductor por ID
 exports.updateDriverById = async (req, res) => {
     try {
         const { name } = req.body;
@@ -57,7 +54,6 @@ exports.updateDriverById = async (req, res) => {
     }
 };
 
-// Eliminar un conductor por ID
 exports.deleteDriverById = async (req, res) => {
     try {
         const [result] = await driverModel.deleteDriverById(req.params.id);
